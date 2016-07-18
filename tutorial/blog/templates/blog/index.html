@@ -1,0 +1,13 @@
+<div>
+    <h1><a href="/">None But a Naturalist</a></h1>
+</div>
+
+{% if latest_post_list %}
+    <ul>
+    {% for post in latest_post_list %}
+        <li><a href="{% url 'blog:post_detail' pk=post.pk %}">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No posts are available.</p>
+{% endif %}
